@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 if [ "$DOCKER_TAG" = "latest" ]; then
   url=`curl -Ls -o /dev/null -w %{url_effective} https://github.com/hashicorp/terraform/releases/latest`
