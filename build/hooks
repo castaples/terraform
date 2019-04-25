@@ -2,7 +2,7 @@
 
 if [ "$DOCKER_TAG" = "latest" ]; then
   url=`curl -Ls -o /dev/null -w %{url_effective} https://github.com/hashicorp/terraform/releases/latest`
-  version=${url##*/}
+  version=${url##*/v}
   echo "Building :latest, $version"
   docker build --build-arg TERRAFORM_VERSION=$version -f $DOCKERFILE_PATH -t $IMAGE_NAME .
 else
